@@ -56,10 +56,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         tree->current->right = nuevo;
       }
     }
-    else{
-      if(is_equal(tree, key, aux->key) == 1)
-        return;
-    }
   }
   return;
 }
