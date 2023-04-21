@@ -53,10 +53,13 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
  
   if(searchTreeMap(tree, tree->current->pair) == NULL){
     TreeNode * nuevo = createTreeNode(key, value);
+    TreeNode * aux;
     nuevo->pair->value = value;
     nuevo->pair->key = key;
-    nuevo->left = nuevo;
-    nuevo->parent = nuevo;
+    if(aux->left != NULL){
+      aux->left = nuevo;
+      nuevo->parent = aux;
+    }
   }
 }
 
