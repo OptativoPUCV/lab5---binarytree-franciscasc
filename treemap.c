@@ -123,6 +123,6 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair->key;
     }
   }
-  tree->current->pair = tree->root->pair;
-  return tree->current->pair;
+  //tree->current->pair = tree->root->pair;
+  return tree->root->right->pair;
 }
