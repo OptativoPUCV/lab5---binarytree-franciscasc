@@ -122,6 +122,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->lower_than(tree->current, tree->current->pair->key) == 1)
       return tree->current->pair->key;
   }
-  tree->current->pair = tree->root->right->pair->key;
+  tree->current->pair = tree->root->pair->key;
   return tree->current->pair;
 }
