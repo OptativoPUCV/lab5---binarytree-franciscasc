@@ -124,5 +124,5 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
   }
   //tree->current->pair = tree->root->pair;
-  return tree->root->pair;
+  return tree->current->right->pair;
 }
