@@ -114,9 +114,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
 Pair * firstTreeMap(TreeMap * tree) {
   tree->current = tree->root; 
   if(tree->current->right == NULL && tree->current->left == NULL)
-    return tree->current->left->pair;
+    return tree->current->left->pair->key;
   else
-    return tree->current->right->pair;
+    return tree->current->right->pair->key;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
