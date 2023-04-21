@@ -123,8 +123,11 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-  tree->current = tree->root; 
-  return tree->current->left->pair;
+  tree->current = tree->root;
+  if(tree->lower_than(tree->current->left->pair, tree->current->right->pair) == 1)
+    return tree->current->left->pair;
+  else 
+    return tree->current->right->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
