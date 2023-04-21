@@ -76,19 +76,20 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     tree->current = tree->root;
     aux = tree->current;
     while(aux != NULL){
-      if(aux != key) return NULL;
-      if(is_equal(tree, aux, key) == 1){
+      if(is_equal(tree, aux->pair->key, key) == 1){
           aux = tree->current;
           return aux->pair;
       }
-      if(tree->lower_than(aux, key) == 1){
-          tree->current->right = key;
+      if(tree->lower_than(aux->pair->key, key) == 1){
+          aux = tree->current->right;
       }
       else{
-          tree->current->left = key;
+          aux = tree->current->left;
       }
     }
-    return tree->current->pair;
+  
+    return NULL;
+  
 }
 
 
