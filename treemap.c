@@ -116,7 +116,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  while(tree->current->right != NULL) {
+  if(tree->current->right != NULL) {
     return tree->current->pair;
     
     if(tree->lower_than(tree->current, tree->current->pair->key) == 1)
