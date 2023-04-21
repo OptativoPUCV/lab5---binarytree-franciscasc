@@ -126,7 +126,7 @@ Pair * firstTreeMap(TreeMap * tree) {
   tree->current = tree->root;
   if(tree->current == NULL) return NULL;
   if(tree->current->left != NULL)
-    return tree->current->left->pair;
+    tree->current = tree->current->left;
   return tree->current->pair;
 }
 
