@@ -116,9 +116,9 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  if(tree->current->right != NULL) {
+  if(tree->current->right != NULL)
     return tree->current->pair;
-    
+  else{  
     if(tree->lower_than(tree->current, tree->current->pair->key) == 1)
       return tree->current->pair->key;
   }
