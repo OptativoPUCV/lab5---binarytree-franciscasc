@@ -133,14 +133,14 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   tree->current = tree->root;
-  while(tree->current != NULL){
+
     if(tree->current->right != NULL)
       return tree->current->right->pair;
     else{  
       if(tree->lower_than(tree->current, tree->current->pair->key) == 1)
         return tree->current->pair->key;
     }
-  }
+  
   tree->current->pair = tree->root->pair->key;
   return tree->current->pair;
 }
