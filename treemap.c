@@ -46,11 +46,10 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
   tree->current = tree->root;
-  Pair *aux = tree->current->pair;
   if(tree->current != NULL){
     if(searchTreeMap(tree, key) == NULL){
       TreeNode * nuevo = createTreeNode(key, value);
-      if(tree->lower_than(key, aux->key) == 1)
+      if(tree->lower_than(key, tree->current->pair->key) == 1)
         tree->current->left= nuevo;
       else{
         tree->current->right = nuevo;
