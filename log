@@ -415,3 +415,14 @@ Fri 21 Apr 2023 09:36:49 PM UTC:
  tests:  14|5
 total_score: 20/70
 0816c29
+Fri 21 Apr 2023 09:43:31 PM UTC: 
+ treemap.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:55:18: error: variable ‘nuevo’ set but not used [-Werror=unused-but-set-variable]
+   55 |       TreeNode * nuevo = createTreeNode(key, value);
+      |                  ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4e00923
