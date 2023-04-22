@@ -93,6 +93,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       return;
     }
     else{
+      //dos hijos
       if(node->left != NULL && node->right != NULL){
         aux = minimum(node->right);
         node->pair = aux->pair;
@@ -131,14 +132,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       }
       aux->left = NULL;
       aux->right = NULL;
-      
-      /*dos hijos
-      if(node->left != NULL && node->right != NULL){
-        aux = minimum(node->right);
-        node->pair = aux->pair;
-        removeNode(tree, aux);
-        return;
-      } */
     }
   } 
   return;
@@ -177,24 +170,24 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
   TreeNode * ub_node;
   tree->current = tree->root;
-  ub_node = tree->current;
+  ub_node = NULL;
 
-  while(ub_node != NULL){
+  while(tree->current != NULL){
     if(is_equal(tree, ub_node->pair->key, key) == 1) 
         return ub_node->pair;
     
-    if(tree->lower_than(ub_node->pair->key, key) == 1){
+    if(tree->lower_than(tree->current->pair->key, key) == 1 && tree->lower_than(key, tree->current->pair->key) == 1){
         ub_node = tree->current->right;
         tree->current = ub_node;
     }
-    else
+    /*else
       if(tree->lower_than(key, ub_node->pair->key) == 1){
         ub_node = tree->current->left;
         tree->current = ub_node;
-    }
+    }*/
   }
   ub_node = tree->current;
-  return NULL;
+  return ub_node->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
