@@ -2477,3 +2477,17 @@ Sat 22 Apr 2023 07:50:09 PM UTC:
  tests:  20|3
 total_score: 45/70
 ce7adc2
+Sat 22 Apr 2023 07:55:06 PM UTC: 
+ treemap.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:126:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  126 |         if(tree->current->parent == aux->parent)
+      |         ^~
+treemap.c:128:11: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  128 |           if(aux->right != NULL)
+      |           ^~
+cc1: all warnings being treated as errors
+Compilation failed
+242d3b4
