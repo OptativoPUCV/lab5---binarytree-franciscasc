@@ -57,14 +57,20 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   
   TreeNode *nNodo = createTreeNode(key, value);
   if(tree->lower_than(tree->current->pair->key, key) == 1){
-    tree->current->right->right = nNodo;
-    nNodo->parent = tree->current->right;
-    tree->current = tree->current->right->right;
+    if(tree->current->right != NULL){
+      tree->current->right->right = nNodo;
+      nNodo->parent = tree->current;
+      tree->current = tree->current->right->right;
+    }
+    tree->current = tree->current->right;
   }
   else{
-    tree->current->left->left = nNodo;
-    nNodo->parent = tree->current->left;
-    tree->current = tree->current->left->left;
+    if(tree->current->left != NULL){
+      tree->current->left->left = nNodo;
+      nNodo->parent = tree->current;
+      tree->current = tree->current->left->left;
+    }
+    tree->current = tree->current->left;
   }
   return;
 }
