@@ -2296,3 +2296,9 @@ treemap.c:130:11: error: ‘TreeMap’ has no member named ‘parent’
       |           ^~
 Compilation failed
 b570bf9
+Sat 22 Apr 2023 07:27:41 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  19|3
+total_score: 40/70
+6214d43
