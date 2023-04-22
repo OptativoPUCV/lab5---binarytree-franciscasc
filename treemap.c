@@ -125,6 +125,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         removeNode(tree, aux);
     }
   }
+  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
