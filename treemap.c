@@ -123,7 +123,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         aux = minimum(tree->current->right);
         tree->current->pair->key = aux->pair->key;
         tree->current->pair->value = aux->pair->value;
-        if(tree->current->parent == aux->parent)
+        if(tree->current->parent == aux->parent){
           tree->current->right = aux->right;
           if(aux->right != NULL)
             aux->right->parent = tree->current;
@@ -131,7 +131,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
           aux->parent->left = tree->current->parent->right;
           if(aux->right != NULL)
             aux->parent->right = aux->parent;
-        }
+          }
+        } 
       }
     }
   }
