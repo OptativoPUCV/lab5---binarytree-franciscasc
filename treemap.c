@@ -133,16 +133,17 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
   }
 
-  if(tree->current->parent != NULL)
-    tree->current = tree->current->parent;
+  if(tree->current->parent != NULL){
+    if(is_equal(tree, tree->current, tree->current->parent->right) == 1)
+      tree->current = tree->current->parent;
+  }
   else{
     if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
-    tree->current->parent = tree->current;
-  }
-  else{
-    return tree->current->pair;
-  }
-  
+      tree->current->parent = tree->current;
+    }
+    else{
+      return tree->current->pair;
+    }
   }
   return tree->current->pair;
 }
