@@ -2940,3 +2940,14 @@ Sat 22 Apr 2023 11:03:20 PM UTC:
  tests:  25|1
 total_score: 60/70
 850cdfd
+Sat 22 Apr 2023 11:07:35 PM UTC: 
+ treemap.c | 24 +++++++++++++-----------
+ 1 file changed, 13 insertions(+), 11 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:171:14: error: variable ‘ub_node’ set but not used [-Werror=unused-but-set-variable]
+  171 |   TreeNode * ub_node;
+      |              ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+588812f
