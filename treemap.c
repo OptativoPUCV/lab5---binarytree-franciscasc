@@ -51,7 +51,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     tree->current = aux;
   }
   
-  //if(tree->current != NULL){
+  if(tree->current != NULL){
     if(searchTreeMap(tree, key) != NULL) return;
     
         TreeNode * nuevo = createTreeNode(key, value);
@@ -66,6 +66,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           nuevo->parent = tree->current->left;
           tree->current = tree->current->left->left;
         }
+  }
   return;
 }
   /*if(tree->root == NULL){
