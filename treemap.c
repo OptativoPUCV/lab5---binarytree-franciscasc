@@ -93,8 +93,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     if(tree->current->left == NULL || tree->current->right == NULL){
       aux = tree->current;
       if(tree->current->right != NULL){
-        tree->current-> parent = aux->parent;
         tree->current = tree->current->right;
+        tree->current-> parent = aux->parent;
         if(aux->parent->left == NULL){
           aux->parent->right = tree->current;
         }
@@ -103,8 +103,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
       }
       if(tree->current->left != NULL){
-        tree->current-> parent = aux->parent;
         tree->current = tree->current->left;
+        tree->current-> parent = aux->parent;
         if(aux->parent->right == NULL){
           aux->parent->left = tree->current;
           tree->root = aux->parent;
@@ -118,57 +118,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       aux->right = NULL;
     }
     
-    /*tree->current = tree->root;
-    
-    if(aux != NULL) {
-      //nodo sin hijo
-      if(node->left == NULL && node->right == NULL){
-        if(node->parent == NULL){
-          aux = NULL;
-        }
-        else{
-          if(node->parent->left != NULL)
-            node->parent->left = NULL;
-          else{
-            node->parent->right = NULL;
-          }
-        }
-      }
 
-      //nodo con un hijo
-      if(node->left == NULL || node->right == NULL){
-        aux = tree->current;
-        
-          aux = aux->right;
-          node->parent = aux->parent;
-          if(aux->parent->left == NULL)
-            aux->parent->right = aux;
-          else{
-            aux->parent->left = aux;
-          }
-          aux->left = NULL;
-          aux->right = NULL;
-        }
-        if(node->left != NULL){
-          aux = aux->left;
-          node->parent = aux->parent;
-          if(aux->parent->right == NULL)
-            aux->parent->left = aux;
-          else{
-            aux->parent->right = aux;
-          }
-          aux->left = NULL;
-          aux->right = NULL;
-        }
-      }
-    }
     //nodo con dos hijos
     if(aux->left != NULL){
       aux = aux->left;
     }
     else{
       aux = aux->right;
-    }*/
+    }
   }
   return;
 }
