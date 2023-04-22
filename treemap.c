@@ -137,13 +137,13 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(is_equal(tree, tree->current, tree->current->parent->right) == 1)
       tree->current = tree->current->parent;
   }
-  else{
+  /*else{
     if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
       tree->current->parent = tree->current;
     }
     else{
       return tree->current->pair;
     }
-  }
+  }*/
   return tree->current->pair;
 }
