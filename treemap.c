@@ -174,7 +174,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
   ub_node = searchTreeMap(tree, key);
 
   if(is_equal(tree, tree->current->pair->key, key) == 1)
-    return ub_node->pair;
+    return ub_node;
   /*if(searchTreeMap(tree, key) != NULL)
     return tree->current->pair;*/
   else{
