@@ -45,25 +45,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 }
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  TreeNode * aux;
-  aux = tree->root;
-  aux->parent = NULL;
   
-  if(aux != NULL){
-    aux->parent = aux;
-    if(searchTreeMap(tree, key) == NULL){
-      TreeNode * nuevo = createTreeNode(key, value);
-      if(tree->lower_than(key, aux->pair->key) == 1)
-         aux->left = nuevo; 
-      else{
-        aux->right = nuevo;
-      }
-    }
-    else{
-      aux->pair->value = value;
-    }
-    
-  }
   return;
 }
 
@@ -119,7 +101,14 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+  TreeNode * ub_node;
+  ub_node = tree->current;
+  if(searchTreeMap(tree, key) != NULL){
+    if(tree->lower_than(key, ub_node->pair->key) == 1){
+      
+    }
+  }
+  return NULL;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
