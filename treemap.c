@@ -180,7 +180,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         //es el nodo siguiente
       }
       else{
-        ub_node = tree->current->pair;
+        ub_node->pair = tree->current->pair;
         return ub_node->pair;
       }
     }
