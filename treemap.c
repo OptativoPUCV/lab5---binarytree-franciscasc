@@ -169,13 +169,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
   Pair * ub_node;
-  //ub_node = NULL;
-  ub_node = searchTreeMap(tree, key);
-
-  if(is_equal(tree, tree->current->pair->key, key))
-    return ub_node;
-  /*if(searchTreeMap(tree, key) != NULL)
-    return tree->current->pair;*/
+  ub_node = NULL;
+  
+  if(searchTreeMap(tree, key) != NULL)
+    return tree->current->pair;
   else{
     while(tree->current != NULL){
       if(tree->lower_than(tree->current->pair->key, key) == 1){
