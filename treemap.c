@@ -132,12 +132,17 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair;
     }
   }
-  
-  if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
+
+  if(tree->current->parent != NULL)
+    tree->current = tree->current->parent;
+  else{
+    if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
     tree->current->parent = tree->current;
   }
   else{
     return tree->current->pair;
+  }
+  
   }
   return tree->current->pair;
 }
