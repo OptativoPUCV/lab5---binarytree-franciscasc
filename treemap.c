@@ -203,7 +203,6 @@ Pair * nextTreeMap(TreeMap * tree) {
       tree->current = tree->current->left;
       return tree->current->pair;
     }
-  }
 
    if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
       tree->root->parent = tree->current;
@@ -211,5 +210,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     else{
       return tree->root->pair;
     }
+  }
   return tree->root->pair;
 }
