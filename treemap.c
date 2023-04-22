@@ -130,14 +130,11 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair;
     }
   
-    /*if(tree->current->left != NULL){
-      aux = tree->current->left;
-      if(aux->right != NULL){
-          aux = aux->right;
-      }
-      tree->current = aux;
+    if(tree->current->left != NULL){
+      
+      tree->current = tree->current->left;
       return tree->current->pair;
-    }*/
+    }
   }
   
   if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
