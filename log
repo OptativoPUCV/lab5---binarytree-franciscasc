@@ -2972,3 +2972,9 @@ Sat 22 Apr 2023 11:22:19 PM UTC:
  1 file changed, 1 insertion(+)
  tests:  0|0
 7952a10
+Sat 22 Apr 2023 11:27:19 PM UTC: 
+ treemap.c | 30 ++++++++++++------------------
+ 1 file changed, 12 insertions(+), 18 deletions(-)
+ tests:  26|1
+total_score: 60/70
+efe46c4

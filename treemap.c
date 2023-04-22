@@ -174,34 +174,28 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if(searchTreeMap(tree, key) != NULL)
     return tree->current->pair;
   else{
-    if(tree->lower_than(tree->current->pair->key, key) == 1){
-      ub_node->pair->key = tree->current->right->pair->key;
-      //es el nodo siguiente
+    while(tree->current != NULL){
+      if(tree->lower_than(tree->current->pair->key, key) == 1){
+        tree->current = tree->current->right;
+        //ub_node = tree->current;
+        //es el nodo siguiente
+      }
+      else{
+        ub_node = tree->current;
+        tree->current = tree->current->left;
+      }
     }
-    else{
+    /*else{
       if(tree->lower_than(key, tree->current->pair->key) == 1){
         ub_node->pair->key = tree->current->pair->key;
       }
-    }
+    }*/
   }
-  /*TreeNode * aux;
-  tree->current = tree->root;
-  aux = tree->current;
-  while(aux != NULL){
-    if(is_equal(tree, aux->pair->key, key) == 1) 
-        return aux->pair;
-    if(tree->lower_than(aux->pair->key, key) == 1){
-        aux = tree->current->right;
-        if(tree->lower_than())
-        tree->current = aux;
-    }
-    else{
-        aux = tree->current->left;
-        tree->current = aux;
-    }
-    tree->current = aux;
-  }*/
-  return NULL;
+
+  if(ub_node != NULL) return ub_node->pair;
+  else {
+    return NULL;
+  }
   
 }
 
