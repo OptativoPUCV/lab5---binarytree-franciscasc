@@ -174,14 +174,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if(searchTreeMap(tree, key) != NULL)
     return tree->current->pair;
   else{
-    while(tree->current != NULL){
-      if(tree->lower_than(key, tree->current->pair->key) == 1){
-        return tree->current->pair;
-      }
-      else{
-        return nextTreeMap(tree);
-      }
-    }
+     return nextTreeMap(tree);
+       
   }
   if(tree->current != NULL) 
     return tree->current->pair;
