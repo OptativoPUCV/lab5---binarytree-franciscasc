@@ -122,10 +122,12 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     if(tree->current->left != NULL && tree->current->right != NULL){
       aux = tree->current;
       while(tree->current->right){
-        aux->pair->key = minimum(tree->current->right->left->pair->key);
-        aux->pair->value = minimum(tree->current->right->left->pair->value);
+        aux = minimum(tree->current->right->left);
+        node->pair->key = aux->pair->key; 
+        node->pair->value = aux->pair->value;
         removeNode(tree, aux);
       }
+      aux = NULL;
       tree->root = aux;
     }
     }
