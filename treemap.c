@@ -113,6 +113,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
       }
     }
+    aux->parent = NULL;
     /*tree->current = tree->root;
     
     if(aux != NULL) {
