@@ -180,12 +180,12 @@ Pair * upperBound(TreeMap * tree, void* key) {
         //es el nodo siguiente
       }
       else{
-        ub_node->pair = tree->current->pair;
-        return ub_node->pair;
+        return tree->current->pair;
       }
     }
-    }if(ub_node != NULL) 
-    return ub_node->pair;
+    }
+  if(tree->current != NULL) 
+    return tree->current->pair;
   return NULL;
 }
 
