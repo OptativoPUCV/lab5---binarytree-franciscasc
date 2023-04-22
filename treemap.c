@@ -123,9 +123,9 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
   while(tree->current != NULL){
     if(tree->current->right != NULL ){
-        tree->current->right = tree->current->right->left;
-    tree->current = tree->current->right;
-    return tree->current->pair;
+      //tree->current->right = tree->current->right->left;
+      tree->current = tree->current->right->left;
+      return tree->current->pair;
     }
   
     if(tree->current->left != NULL){
