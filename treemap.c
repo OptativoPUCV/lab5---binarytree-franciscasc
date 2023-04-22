@@ -91,6 +91,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         tree->current->parent = NULL;
       }
     } 
+    tree->current = tree->root;
     
     
   }
