@@ -127,7 +127,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         node->pair->value = aux->pair->value;
         
       }
-      removeNode(tree, aux->parent);
+      removeNode(tree, aux);
       tree->root = NULL;
     }
   }
