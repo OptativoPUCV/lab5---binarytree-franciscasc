@@ -90,6 +90,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         tree->current->parent = NULL;
       }
     }
+    return;
 
     //nodo con un hijo
     if(tree->current->right == NULL || tree->current->left == NULL){
