@@ -138,6 +138,22 @@ Pair * upperBound(TreeMap * tree, void* key) {
       
     }
   }*/
+  TreeNode * ub_node;
+    tree->current = tree->root;
+    ub_node = tree->current;
+    while(ub_node != NULL){
+      if(is_equal(tree, ub_node->pair->key, key) == 1) 
+          return ub_node->pair;
+      if(tree->lower_than(ub_node->pair->key, key) == 1){
+          ub_node = tree->current->right;
+          tree->current = ub_node;
+      }
+      else{
+          ub_node = tree->current->left;
+          tree->current = ub_node;
+      }
+      tree->current = ub_node;
+    }
   return NULL;
 }
 
