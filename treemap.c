@@ -204,12 +204,12 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair;
     }
 
-   if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
+  /*if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
       tree->current->parent = tree->current;
     }
     else{
       return tree->current->pair;
-    }
+    }*/
   }
   return tree->root->pair;
 }
