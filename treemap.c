@@ -130,6 +130,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   if(){
     
   }*/
+  }
   return;
 }
 
