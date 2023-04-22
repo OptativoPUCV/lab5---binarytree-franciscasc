@@ -175,6 +175,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     return tree->current->pair;
   else{
     if(tree->lower_than(tree->current->pair->key, key) == 1){
+      ub_node->pair->key = tree->current->right->pair->key;
       //es el nodo siguiente
     }
     else{
