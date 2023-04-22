@@ -89,9 +89,19 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       tree->current->left = NULL;
       aux->parent = NULL;
     }
-    
+
+    if(tree->current->left == NULL || tree->current->right == NULL){
+      aux = tree->current;
+      if(tree->current->right != NULL){
+        tree->current-> parent = aux->parent;
+        tree->current = tree->current->right;
+        if(aux->parent->left == NULL){
+          aux->parent->right = tree->current;
+        }
+      }
+    }
     /*tree->current = tree->root;
-    aux = tree->current;
+    
     if(aux != NULL) {
       //nodo sin hijo
       if(node->left == NULL && node->right == NULL){
@@ -110,7 +120,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       //nodo con un hijo
       if(node->left == NULL || node->right == NULL){
         aux = tree->current;
-        if(node->right != NULL){
+        
           aux = aux->right;
           node->parent = aux->parent;
           if(aux->parent->left == NULL)
