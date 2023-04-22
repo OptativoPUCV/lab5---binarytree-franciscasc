@@ -124,7 +124,6 @@ Pair * nextTreeMap(TreeMap * tree) {
   //if(tree->current == NULL) return NULL; 
   while(tree->current != NULL){
     if(tree->current->right != NULL ){
-        tree->current->right = tree->current->right->left;
       return tree->current->right->pair;
     }
     else{  
