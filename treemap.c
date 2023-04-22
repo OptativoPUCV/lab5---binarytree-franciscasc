@@ -129,7 +129,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     //nodo con dos hijos
     aux = node->right;
-    while(aux->left != NULL){
+    if(aux->left != NULL){
       aux = aux->left;
     }
     node->pair = aux->pair;
