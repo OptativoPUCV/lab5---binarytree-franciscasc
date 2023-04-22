@@ -101,13 +101,13 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  TreeNode * ub_node;
+  /*TreeNode * ub_node;
   ub_node = tree->current;
   if(searchTreeMap(tree, key) != NULL){
     if(tree->lower_than(key, ub_node->pair->key) == 1){
       
     }
-  }
+  }*/
   return NULL;
 }
 
