@@ -168,10 +168,22 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  /*TreeNode * ub_node;
-  ub_node = NULL;*/
-
-  TreeNode * aux;
+  TreeNode * ub_node;
+  ub_node = NULL;
+  
+  if(searchTreeMap(tree, key) != NULL)
+    return tree->current->pair;
+  else{
+    if(tree->lower_than(tree->current->parent->pair->key, key) == 1){
+      //es el nodo siguiente
+    }
+    else{
+      if(tree->lower_than(key, tree->current->parent->pair->key) == 1){
+        ub_node->pair->key = tree->current->parent->pair->key;
+      }
+    }
+  }
+  /*TreeNode * aux;
   tree->current = tree->root;
   aux = tree->current;
   while(aux != NULL){
@@ -179,6 +191,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         return aux->pair;
     if(tree->lower_than(aux->pair->key, key) == 1){
         aux = tree->current->right;
+        if(tree->lower_than())
         tree->current = aux;
     }
     else{
@@ -186,7 +199,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         tree->current = aux;
     }
     tree->current = aux;
-  }
+  }*/
   return NULL;
   
 }
