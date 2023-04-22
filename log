@@ -3104,3 +3104,31 @@ treemap.c:187:3: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 d2bc670
+Sat 22 Apr 2023 11:36:45 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:171:14: error: variable ‘ub_node’ set but not used [-Werror=unused-but-set-variable]
+  171 |   TreeNode * ub_node;
+      |              ^~~~~~~
+treemap.c: At top level:
+treemap.c:189:3: error: expected identifier or ‘(’ before ‘if’
+  189 |   if(ub_node != NULL)
+      |   ^~
+treemap.c:191:1: error: expected identifier or ‘(’ before ‘}’ token
+  191 | }
+      | ^
+treemap.c:192:3: error: expected identifier or ‘(’ before ‘return’
+  192 |   return NULL;
+      |   ^~~~~~
+treemap.c:193:1: error: expected identifier or ‘(’ before ‘}’ token
+  193 | }
+      | ^
+treemap.c: In function ‘upperBound’:
+treemap.c:187:3: error: control reaches end of non-void function [-Werror=return-type]
+  187 |   }
+      |   ^
+cc1: all warnings being treated as errors
+Compilation failed
+98171c7
