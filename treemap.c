@@ -127,9 +127,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         //removeNode(tree, node);
         aux->parent->right = NULL;
       }
+      aux->parent = NULL;
     }
-  }
-  return;
+  } 
+ 
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
