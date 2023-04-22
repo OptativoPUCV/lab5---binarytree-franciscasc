@@ -107,9 +107,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         tree->current = tree->current->left;
         if(aux->parent->right == NULL){
           aux->parent->left = tree->current;
+          tree->root = aux->parent;
         }
         else{
           aux->parent->right = tree->current;
+          tree->root = aux->parent;
         }
       }
       aux->left = NULL;
