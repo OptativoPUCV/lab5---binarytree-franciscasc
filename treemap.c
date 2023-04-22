@@ -173,11 +173,11 @@ Pair * nextTreeMap(TreeMap * tree) {
   }
 
    /* if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
-      tree->current->parent = tree->current;
+      tree->root->parent = tree->current;
     }
     else{
-      return tree->current->pair;
+      return tree->root->pair;
     }
   */
-  return tree->current->pair;
+  return tree->root->pair;
 }
