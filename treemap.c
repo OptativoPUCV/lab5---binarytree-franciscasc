@@ -174,12 +174,12 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if(searchTreeMap(tree, key) != NULL)
     return tree->current->pair;
   else{
-    if(tree->lower_than(tree->current->parent->pair->key, key) == 1){
+    if(tree->lower_than(tree->current->pair->key, key) == 1){
       //es el nodo siguiente
     }
     else{
-      if(tree->lower_than(key, tree->current->parent->pair->key) == 1){
-        ub_node->pair->key = tree->current->parent->pair->key;
+      if(tree->lower_than(key, tree->current->pair->key) == 1){
+        ub_node->pair->key = tree->current->pair->key;
       }
     }
   }
