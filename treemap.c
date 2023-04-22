@@ -133,18 +133,12 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
   }
 
-  while(tree->current->parent != NULL && is_equal(tree, tree->current, tree->current->parent->right) == 1){
-      tree->current = tree->current->parent;
-  }
-  tree->current = tree->current->parent;
-  /*else{
     if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
       tree->current->parent = tree->current;
     }
     else{
       return tree->current->pair;
     }
-  }*/
   
   return tree->current->pair;
 }
