@@ -81,11 +81,14 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
   if(searchTreeMap(tree, tree->current->pair->key) != NULL){
+    TreeNode *aux;
     //nodo sin hijo
     if(tree->root->left != NULL && tree->root->right != NULL) {
+        aux = tree->root;
+        tree->root = tree->root->parent;
         tree->root->left = NULL;
         tree->root->right = NULL;
-        tree->root->parent = NULL;
+        aux->parent = NULL;
       }
     }
     //nodo con un hijo
