@@ -121,11 +121,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       
       //dos hijos
       if(tree->current->left != NULL && tree->current->right != NULL){
-        aux = tree->root;
         aux = minimum(tree->current->right);
         tree->current->pair->key = aux->pair->key;
         tree->current->pair->value = aux->pair->value;
         aux->parent->right = NULL;
+        tree->root = aux->parent;
       }
     }
   }
