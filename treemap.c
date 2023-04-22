@@ -168,8 +168,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  Pair * ub_node;
-  ub_node = NULL;
+  /*Pair * ub_node;
+  ub_node = NULL;*/
   
   if(searchTreeMap(tree, key) != NULL)
     return tree->current->pair;
