@@ -2688,3 +2688,36 @@ treemap.c:192:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 653850a
+Sat 22 Apr 2023 08:52:36 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:61:7: error: ‘node’ undeclared (first use in this function)
+   61 |       node = tree->root->right->right;
+      |       ^~~~
+treemap.c:61:7: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:143:5: error: ‘node’ undeclared (first use in this function)
+  143 |     node = tree->root;
+      |     ^~~~
+treemap.c: In function ‘upperBound’:
+treemap.c:164:3: error: ‘node’ undeclared (first use in this function); did you mean ‘ub_node’?
+  164 |   node = tree->root;
+      |   ^~~~
+      |   ub_node
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:186:3: error: ‘node’ undeclared (first use in this function)
+  186 |   node = tree->root;
+      |   ^~~~
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:195:9: error: ‘node’ undeclared (first use in this function)
+  195 |   while(node != NULL){
+      |         ^~~~
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:192:1: error: control reaches end of non-void function [-Werror=return-type]
+  192 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+cf2ca79
