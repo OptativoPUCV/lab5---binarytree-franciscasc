@@ -131,7 +131,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       }
     }
   }
-  tree->root = NULL;
   return;
 }
 
