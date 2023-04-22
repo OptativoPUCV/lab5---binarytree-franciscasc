@@ -125,10 +125,9 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL ){
         return tree->current->right->pair;
     }
-    else{
-      if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
-        return tree->current->left->pair;
-      }
+    return tree->current->left->pair;
+    if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
+        return tree->current->pair;
     }
   }
   tree->current = tree->current->parent;
