@@ -177,12 +177,11 @@ Pair * upperBound(TreeMap * tree, void* key) {
     while(tree->current != NULL){
       if(tree->lower_than(tree->current->pair->key, key) == 1){
         return nextTreeMap(tree);
-        //ub_node = tree->current;
         //es el nodo siguiente
       }
       else{
-        ub_node = tree->current;
-        tree->current = tree->current->left;
+        ub_node = tree->current->pair;
+        return ub_node->pair;
       }
     }
     }if(ub_node != NULL) 
