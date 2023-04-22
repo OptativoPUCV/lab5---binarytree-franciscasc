@@ -123,15 +123,15 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
   while(tree->current != NULL){
     if(tree->current->right != NULL ){
-      return tree->current->right->pair;
+        tree->current->right = tree->current->left;
+    tree->current = tree->current->right;
     }
     else{
-      return tree->current->left->pair;
+      if(tree->lower_than(tree->current, tree->current->pair->key) == 1){
+        tree->current = tree->current->parent;
+      }
+      tree->current = tree->current->parent;
+      }
     }
-    
-    if(tree->lower_than(tree->current, tree->current->pair->key) == 1)
-        tree->current->parent = tree->current;
-    tree->current = tree->current->parent;
-  }
   return tree->current->pair;
 }
