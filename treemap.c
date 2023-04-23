@@ -178,7 +178,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
           return nextTreeMap(tree);
      }*/
   }
-}
 
 Pair * firstTreeMap(TreeMap * tree) {
   tree->current = tree->root;
