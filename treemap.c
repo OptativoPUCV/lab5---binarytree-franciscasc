@@ -191,8 +191,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
     else{
       return nextTreeMap(tree);
     }
-    return NULL;
   }
+  return NULL;
+}
 
 Pair * firstTreeMap(TreeMap * tree) {
   tree->current = tree->root;
