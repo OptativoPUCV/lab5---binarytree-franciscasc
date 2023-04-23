@@ -3522,3 +3522,14 @@ Sun 23 Apr 2023 02:01:32 AM UTC:
  tests:  25|1
 total_score: 60/70
 bac797b
+Sun 23 Apr 2023 02:13:41 AM UTC: 
+ treemap.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:198:2: error: "/*" within comment [-Werror=comment]
+  198 |  /* if(is_equal(tree, tree->current->pair->key, key) == 1) return aux;
+      |   
+cc1: all warnings being treated as errors
+Compilation failed
+7c92034
