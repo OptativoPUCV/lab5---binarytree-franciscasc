@@ -151,8 +151,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     tree->current = tree->root;
     aux = tree->current;
     while(aux != NULL){
-      if(is_equal(tree, aux->pair->key, key) == 1) 
+      if(is_equal(tree, aux->pair->key, key) == 1) {
+          tree->current = aux;
           return aux->pair;
+      }
       if(tree->lower_than(aux->pair->key, key) == 1){
           tree->current = aux;
           aux = tree->current->right;
