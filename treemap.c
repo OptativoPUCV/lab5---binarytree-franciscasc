@@ -177,8 +177,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
       return aux;
     }
   }
-  if (aux == NULL)
-    return NULL;
   return aux;
   
  /* Pair * aux;
