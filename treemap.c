@@ -174,9 +174,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if (aux==NULL) {
     if (tree->lower_than(tree->current->pair->key, key) == 1){
       aux = nextTreeMap(tree);
+      return aux;
     }
   }
-  if (aux != NULL)
+  if (aux == NULL)
     return NULL;
   return aux;
   
