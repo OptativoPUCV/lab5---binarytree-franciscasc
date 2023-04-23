@@ -3533,3 +3533,9 @@ treemap.c:198:2: error: "/*" within comment [-Werror=comment]
 cc1: all warnings being treated as errors
 Compilation failed
 7c92034
+Sun 23 Apr 2023 02:14:39 AM UTC: 
+ treemap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+ tests:  25|1
+total_score: 60/70
+74c05d7
