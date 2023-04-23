@@ -184,7 +184,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       }
       tree->current = aux;
     }
-  if(tree->current){
+  
   if(is_equal(tree, tree->current->pair->key, key) == 1) return tree->current->pair;
   else{
      if(tree->lower_than(key, tree->current->pair->key) == 1) return tree->current->pair;
@@ -192,8 +192,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       return nextTreeMap(tree);
     }
   }
-  }
-  return NULL;
+
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
