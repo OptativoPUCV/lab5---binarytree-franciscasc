@@ -170,7 +170,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
   Pair *aux = searchTreeMap(tree, key);
 
-  if (aux != NULL) {
+  if (aux == NULL) {
     if (tree->lower_than(tree->current->pair->key, key) == 1) {
       if( nextTreeMap(tree) == NULL) 
         return NULL;
