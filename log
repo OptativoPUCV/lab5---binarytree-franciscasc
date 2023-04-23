@@ -3379,3 +3379,15 @@ Sun 23 Apr 2023 12:03:29 AM UTC:
  tests:  26|1
 total_score: 60/70
 dea39ec
+Sun 23 Apr 2023 12:03:51 AM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c:179:3: error: expected identifier or ‘(’ before ‘return’
+  179 |   return NULL;
+      |   ^~~~~~
+treemap.c:180:1: error: expected identifier or ‘(’ before ‘}’ token
+  180 | }
+      | ^
+Compilation failed
+43153db
